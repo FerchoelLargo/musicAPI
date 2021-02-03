@@ -1,0 +1,20 @@
+{
+  "mysqlSettings" : {
+    "host"     : "localhost",
+		"user"     : "root",
+		"password" : "",
+		"database": "imusicapi"
+  },
+  "secretKeyToEncrypt":"youngunicornsflyfree",
+  "mailTransporter":{
+    "service": "gmail",
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "secure": false,
+    "requireTLS": true,
+    "auth": {
+      "user": "correo@gmail.com",
+      "pass": "contraseña"
+    }
+  }
+}

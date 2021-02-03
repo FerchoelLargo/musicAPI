@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%
+    const routes = ['/','home','index'];
+%>
+
+<head>
+    <%- include('./../partials/head'); %>
+    <style>
+        body{ margin: 0;padding: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid" style="padding: 0;" >
+
+        <header>
+            <%- include('../partials/header'); %>
+        </header>
+
+        <div style="height: calc(100vh - 60px);" class="container-xl d-flex justify-content-center" >
+            <main class="jumbotron flex-grow-1" >
+    
+                <% if( routes.includes(view.toLowerCase()) ) { %> 
+                    <%- include('../partials/index',{}); %>
+                <% } else {%> 
+                    <%- include('../partials/404'); %>
+                <% } %> 
+    
+            </main>
+        </div>
+
+    </div>
+
+</body>
+</html>

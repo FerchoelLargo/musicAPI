@@ -1,0 +1,44 @@
+<%
+  const clase = {
+    get:'bg-primary',
+    post:'bg-success',
+    put:'bg-warning',
+    delete:'bg-danger',
+  }
+%>
+<div>
+  <h1> An API to play a moment.</h1>
+
+  <h4> Let's make some request </h4>
+  
+  <h5 class="d-flex justify-content-center align-items-center" > Table of Content </h5>
+
+    <table class="table">
+      
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Method</th>
+          <th scope="col">Route</th>
+          <th scope="col">Description</th>
+          <th scope="col">Params</th>
+          <th scope="col">Output example</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% APIFunctions.forEach(fun => { %> 
+          <tr>
+            <th class="text-white <%= clase[fun.method] %> " scope="col"> <%= fun['method'] %>  </th>
+            <th scope="col"> <a href="<%= fun.link %>" > <%= fun['route'] %> </a> </th>
+            <th scope="col"> <%= fun['desc'] %> </th>
+            <th scope="col"> <%= fun['params'] %> </th>
+            <th scope="col"> <%= fun['out'] %> </th>
+          </tr>
+        <% }); %> 
+
+      </tbody>
+
+    </table>
+
+</div>
